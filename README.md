@@ -33,7 +33,7 @@ Add hierstate to your project as a subdirectory, then link its target:
 
 ```cmake
 add_subdirectory(external/hierstate)
-target_link_libraries(my_game PRIVATE hierstate::hierstate)
+target_link_libraries(my_game PRIVATE hierstate)
 ```
 
 To use an installed copy, install it to a prefix and locate the package from a separate project:
@@ -44,12 +44,14 @@ cmake --install build --prefix /path/to/hierstate-install
 
 ```cmake
 find_package(hierstate CONFIG REQUIRED)
-target_link_libraries(my_game PRIVATE hierstate::hierstate)
+target_link_libraries(my_game PRIVATE hierstate)
 ```
 
 Pass `-DCMAKE_PREFIX_PATH=/path/to/hierstate-install` when configuring the consuming project if the prefix is outside CMake's default search paths.
 
 ## How to Use
+
+Include `<hierstate.h>` to use `hierstate::state` and `hierstate::group`.
 
 See [examples/sequence.cpp](examples/sequence.cpp) for a runnable hierarchy and the use of `current()`, `get()`, `enter()`, and `exit()`.
 

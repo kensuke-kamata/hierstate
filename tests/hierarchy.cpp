@@ -1,4 +1,4 @@
-#include <hierstate/group.h>
+#include <hierstate.h>
 
 #include <iostream>
 #include <memory>

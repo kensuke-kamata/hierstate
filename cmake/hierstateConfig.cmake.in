@@ -1,4 +1,7 @@
 @PACKAGE_INIT@
 
 include("${CMAKE_CURRENT_LIST_DIR}/hierstateTargets.cmake")
+if(NOT TARGET hierstate)
+    add_library(hierstate ALIAS hierstate::hierstate)
+endif()
 check_required_components(hierstate)
